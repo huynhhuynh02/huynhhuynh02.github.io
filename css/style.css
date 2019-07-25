@@ -1,0 +1,15 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+.page{
+    display:flex;
+}
+.page .header{
+    width: 140px;
+    height: 100vh;
+    background: #222222;
+}

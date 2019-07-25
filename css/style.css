@@ -1,15 +1,33 @@
 @media only screen and (max-width: 600px){
     .col-xs-12{
-        width:100% !important;
+        width:100%;
     }
-    .header{
+    .header-hidden-xs{
         display: none;
     }
     .page .content{
-        margin-left:0 !important;
+        margin-left:0;
     }
     #aboutme .description{
-        padding: 0 !important;
+        padding: 0;
+    }
+}
+@media only screen and (min-width:991px){
+    .page .content{
+        margin-left: 160px;
+        padding-left: 15px;
+    }
+    .col-6{
+        width: 50%;
+        padding: 15px;
+    }
+    .col-8{
+        width: 66.66%;
+        padding: 15px;
+    }
+    .col-4{
+        width: 33.33%;
+        padding: 15px;
     }
 }
 body{
@@ -49,18 +67,6 @@ ul{
 .p-0{
     padding: 0 !important;
 }
-.col-6{
-    width: 50%;
-    padding: 15px;
-}
-.col-8{
-    width: 66.66%;
-    padding: 15px;
-}
-.col-4{
-    width: 33.33%;
-    padding: 15px;
-}
 .bg-secondary{
     background: #333;
 }
@@ -90,7 +96,6 @@ ul{
 .page .content{
     scroll-behavior: smooth;
     height: 100%;
-    margin-left: 160px;
     position: relative;
 }
 .navigation ul{
@@ -135,9 +140,6 @@ ul{
     background-image: url(../images/sp_photo.jpg);
     background-size:cover;
     background-position: center center;
-}
-.content{
-    padding-left: 15px;
 }
 .sup-wrap{
     background: #222222;

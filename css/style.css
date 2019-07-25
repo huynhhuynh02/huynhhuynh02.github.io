@@ -1,3 +1,17 @@
+@media only screen and (max-width: 600px){
+    .col-xs-12{
+        width:100% !important;
+    }
+    .header{
+        display: none;
+    }
+    .page .content{
+        margin-left:0 !important;
+    }
+    #aboutme .description{
+        padding: 0 !important;
+    }
+}
 body{
     padding: 0;
     margin: 0;
@@ -173,16 +187,16 @@ ul{
 #resume{
     padding: 50px 70px;
 }
-#resume .section-title-block{
+.section-title-block{
     margin-bottom: 40px;
 }
-#resume .section-title-block .section-title{
+.section-title-block .section-title{
     color:#f5f5f5;
     font-size: 30px;
     border-bottom:2px solid #888;
     margin-bottom: 5px;
 }
-#resume .section-title-block .description-title{
+.section-title-block .description-title{
     float: right;
     font-size: 14px;
     font-weight: 300;
@@ -301,4 +315,26 @@ ul{
         width: 80%;
     }
 }
-
+/* End resume */
+#portfolio{
+    padding: 50px 70px;
+}
+#portfolio .portfolio-filters{
+    padding:0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    text-align: right;
+}
+#portfolio .portfolio-filters .filters-item{
+    display: inline-block;
+}
+#portfolio .portfolio-filters .filters-item a{
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 10px 15px;
+    border:2px solid #333;
+}
+#portfolio .portfolio-filters .filters-item.active a{
+    border:2px solid #ff714a;
+}

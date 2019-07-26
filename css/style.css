@@ -247,6 +247,7 @@ ul{
     border-radius: 20px;
     cursor: pointer;
     color: #888;
+    margin-bottom: 20px;
     
 }
 #aboutme .about-content .info-block-icon:hover{

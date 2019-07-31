@@ -410,6 +410,30 @@ ul{
     }
 }
 /* End resume */
+
+#portfolio .circle-menu{
+    background: #ff714a;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+}
+#portfolio .circle-menu .line{
+    width: 30px;
+    height: 5px;
+    background: #fff;
+    display: block;
+    margin: 3px;
+}
+#portfolio .circle-menu .line:nth-child(1){
+    transform: translateY(10px) rotate(45deg);
+}
+#portfolio .circle-menu .line:nth-child(3){
+    transform:translateY(-10px) rotate(-45deg);
+}
 #portfolio .portfolio-filters{
     padding:0;
     margin: 0;

@@ -1,0 +1,373 @@
+$font-size:13px;
+$font-small:12px;
+$font-normal:16px;
+$font-large:18px;
+$primary-color:#3280BC;
+$secondary-color:#28699A;
+$heading-size:20px;
+$padding:10px;
+$color1:#37474f;
+$color2:#029c7c;
+$color3:#28699a;
+$color4:#db2827;
+$color5:#655643;
+$green:#1fbc89;
+$main-color:#373739;
+@import url('https://fonts.googleapis.com/css?family=Mitr:200|Montserrat|Open+Sans|Open+Sans+Condensed:300|Roboto&display=swap');
+body{
+    background: #F6F6F6;
+}
+@import 'toolbar';
+#boxTemp{
+    display: none;
+}
+[contenteditable]{
+    &:hover{
+        outline: 1px dashed $color3;
+    }
+    &:focus{
+        outline: 1px dashed $color3;
+    }
+}
+#cv-inner{
+    font-size: $font-size;
+    .heading-title{
+        font-size: $heading-size;
+        color: #fff;
+    }
+}
+.title-content-item{
+    font-size: 14px;
+    font-weight: bold;
+}
+// css cv template
+#cv-inner{
+    background: $main-color;
+    .cv-info{
+            position: relative;
+            background:$primary-color;
+            padding:30px 15px;
+            .background-1{
+                position: absolute;
+                width: 60%;
+                height: 100%;
+                border-top:232px solid $color1;
+                border-left: 88px solid transparent ;
+                right: 0;
+                top: 0;
+                opacity: 0.5;
+            }
+            .background-2{
+                position: absolute;
+                width: 80%;
+                height: 100%;
+                border-top:232px solid $color3;
+                border-left: 88px solid transparent ;
+                right: 0;
+                top: 0;
+                opacity: 0.5;
+            }
+            .avatar{
+                cursor:  pointer;
+                width:170px;
+                height: 170px;
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height:100%;
+                    border-radius: 50%;
+                }
+                &:hover{
+                    border:1px dashed #fff;
+
+                }
+            }
+            .title-name{
+                h2{
+                    color: #fff;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-size: 20px;
+                }
+            }
+        .info{
+            transition: 0.5s all;
+            position: relative;
+            .info-list{
+                .info-item{
+                    background:transparent;
+                    border:none;
+                    color: #fff;
+                    font-size: 13px;
+                    padding:5px 10px;
+                    i{
+                        width: 25px;
+                        height: 25px;
+                        line-height: 25px;
+                        text-align: center;
+                        background: $secondary-color;
+                        color: #fff;
+                        border-radius: 50%;
+                    }
+                }
+
+            }
+        }
+        
+    }
+    .cv-content{
+        color:#fff;
+        padding:20px 0px;
+        .cv-title-content{
+            font-size: 20px;
+            i{
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                background: $secondary-color;
+                color: #fff;
+                border-radius: 50%;
+                font-size:20px;
+            }
+        }
+        .objective{
+            padding: $padding;
+        
+            p{
+                color: #fff;
+                font-size: $font-size;
+                text-align:left;
+            }
+        }
+        .skills{
+            padding: $padding;
+            position: relative;
+            &:hover{
+                border:1px dashed #fff;
+                .btn{
+                    display: block;
+                }
+            }
+            .btn{
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .skill-item{
+                margin-bottom: 10px;
+                .skill-description{
+                    color:#fff;
+                    font-size: $font-size;
+                    margin-bottom: 5px;
+                }
+                .skill-process{
+                    width: 100%;
+                    height:10px;
+                    border:1px solid $color3;
+                    border-radius: 20px;
+                    position: relative;
+                }
+                .skill-process1{
+                    &:after{
+                        position: absolute;
+                        width: 80%;
+                        content: "";
+                        left:0;
+                        top: 0;
+                        height: 100%;
+                        border-radius: 20px;
+                        border:2px solid $main-color;
+                        background: $secondary-color;
+                    }
+                }
+                .skill-process2{
+                    &:after{
+                        position: absolute;
+                        width: 60%;
+                        content: "";
+                        left:0;
+                        top: 0;
+                        height: 100%;
+                        border-radius: 20px;
+                        border:2px solid $main-color;
+                        background: $secondary-color;
+                    }
+                }
+                .skill-process3{
+                    &:after{
+                        position: absolute;
+                        width: 80%;
+                        content: "";
+                        left:0;
+                        top: 0;
+                        height: 100%;
+                        border-radius: 20px;
+                        border:2px solid $main-color;
+                        background: $secondary-color;
+                    }
+                }
+                .skill-process4{
+                    &:after{
+                        position: absolute;
+                        width: 70%;
+                        content: "";
+                        left:0;
+                        top: 0;
+                        height: 100%;
+                        border-radius: 20px;
+                        background: $secondary-color;
+                        border:2px solid $main-color;
+                    }
+                }
+
+            }
+        }
+        .education{
+            .education-item{
+                position: relative;
+                &:hover{
+                    border:1px dashed #333;
+                    .btn{
+                        display: block;
+                    }
+                }
+                .btn{
+                    position: absolute;
+                    right: 0;
+                    top: -30px;
+                    display: none;
+                }
+            }
+            
+        }
+        .work-experience{
+            .exp-item{
+                position: relative;
+                margin-bottom: 15px;
+                &:hover{
+                    border:1px dashed #333;
+                    .btn{
+                        display: block;
+                    }
+                }
+                .btn{
+                    position: absolute;
+                    right: 0;
+                    top: -30px;
+                    display: none;
+                }
+            }
+            
+        }
+        .activity{
+            .activity-item{
+                position: relative;
+                &:hover{
+                    border:1px dashed #333;
+                    .btn{
+                        display: block;
+                    }
+                }
+                .btn{
+                    position: absolute;
+                    right: 0;
+                    top: -30px;
+                    display: none;
+                }
+            }
+            
+        }
+    } 
+}
+#ModalInfo{
+    .form-group{
+        position: relative;
+        .form-control{
+            padding-left: 45px;
+        }
+        i{
+            position: absolute;
+            border-radius: 0.25rem;
+            left:0;
+            top: 0;
+            font-size: 20px;
+            width: 38px;
+            height: 38px;
+            text-align: center;
+            line-height: 38px;
+            background: $color1;
+            color: #fff;
+        }
+    }
+}
+#ModalSkills{
+    .form-group{
+        .slider-skill{
+            &::-webkit-slider-thumb{
+                -webkit-appearance: none;
+                appearance: none;
+                width: 22px;
+                height: 22px;
+                background: #4CAF50;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            -webkit-appearance: none;
+            height: 15px;
+            background:#DFDFDF;
+            border-color: transparent;
+            &:focus{
+                border: none;
+                border-color: transparent;
+                box-shadow: none;
+            }
+        }
+
+    }
+}
+#boxTemp {
+
+    .card-cv{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        margin-top: 15px;
+        position: relative;
+        box-shadow: 0px 0px 20px #f5f5f5;
+        &:hover .overflow{
+            visibility: visible;
+        }
+            
+    }
+    .overflow{
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        visibility: hidden;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        .bt-themes{
+            display: inline-block;
+            margin-top: 10px;
+            background: $secondary_color;
+            padding:15px 15px;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-size: $font-size;
+            transition: 0.3s;
+            &:hover{
+                text-decoration: none;
+                color:#fff;
+                box-shadow: 5px 5px 10px hsla(0,0%,96.1%,.74);
+            }
+        }
+    }
+}

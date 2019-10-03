@@ -1,0 +1,435 @@
+@import url("https://fonts.googleapis.com/css?family=Mitr:200|Montserrat|Open+Sans|Open+Sans+Condensed:300|Roboto&display=swap");
+body {
+  background: #F6F6F6;
+}
+
+[contenteditable]:hover {
+  outline: 1px dashed #28699a;
+}
+[contenteditable]:focus {
+  outline: 1px dashed #28699a;
+}
+
+#boxTemp {
+  display: none;
+}
+
+#cv-inner {
+  font-size: 13px;
+}
+#cv-inner .heading-title {
+  font-size: 20px;
+  color: #fff;
+}
+
+.title-content-item {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.toolbar-control {
+  background: #fff;
+}
+.toolbar-control .toolbar {
+  text-align: center;
+  padding: 10px;
+}
+.toolbar-control .toolbar .toobar-title {
+  font-size: 16px;
+  text-align: center;
+}
+.toolbar-control .btn-action {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+.toolbar-control .btn-action i {
+  font-size: 30px;
+}
+.toolbar-control .toolbar-language-item .options .language {
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 18px;
+  display: inline-block;
+}
+.toolbar-control .toolbar-language-item .options .language img {
+  border: 1px solid #eee;
+  border-radius: 2px;
+}
+.toolbar-control .toolbar-language-item .options .active:after {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #1fbc89;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.toolbar-control .toolbar-bg-color .options .color {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.toolbar-control .toolbar-bg-color .options .color .fa-check {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.toolbar-control .toolbar-bg-color .options .color-1 {
+  background: #37474f;
+}
+.toolbar-control .toolbar-bg-color .options .color-2 {
+  background: #029c7c;
+}
+.toolbar-control .toolbar-bg-color .options .color-3 {
+  background: #28699a;
+}
+.toolbar-control .toolbar-bg-color .options .color-4 {
+  background: #db2827;
+}
+.toolbar-control .toolbar-bg-color .options .color-5 {
+  background: #655643;
+}
+.toolbar-control .toolbar-bg-color .options .active .fa-check {
+  color: #fff;
+  display: inline-block;
+}
+.toolbar-control .toolbar-font-family #font-options {
+  background: #fff;
+  width: 120px;
+  border-color: #efefef;
+}
+.toolbar-control .toolbar-font-size .fontsize {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.toolbar-control .toolbar-font-size .small {
+  font-size: 12px;
+}
+.toolbar-control .toolbar-font-size .normal {
+  font-size: 16px;
+}
+.toolbar-control .toolbar-font-size .large {
+  font-size: 18px;
+}
+.toolbar-control .toolbar-font-size .active {
+  background: #666;
+  color: #fff;
+}
+.toolbar-control .toolbar-line-height .line-height {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.toolbar-control .toolbar-line-height .small {
+  font-size: 12px;
+}
+.toolbar-control .toolbar-line-height .normal {
+  font-size: 16px;
+}
+.toolbar-control .toolbar-line-height .large {
+  font-size: 18px;
+}
+.toolbar-control .toolbar-line-height .active {
+  background: #666;
+  color: #fff;
+}
+.toolbar-control .toolbar-save {
+  background-image: linear-gradient(to bottom right, #1fbc89, #029c7c);
+  color: #fff;
+}
+.toolbar-control .toolbar-download {
+  background-image: linear-gradient(to bottom right, #FF0807, #db2827);
+  color: #fff;
+}
+
+#cv-inner .cv-info {
+  background: #3280BC;
+}
+#cv-inner .cv-info .subject {
+  padding: 20px 15px;
+}
+#cv-inner .cv-info .subject .avatar {
+  cursor: pointer;
+  width: 170px;
+  height: 170px;
+}
+#cv-inner .cv-info .subject .avatar img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+#cv-inner .cv-info .subject .avatar:hover {
+  border: 1px dashed #fff;
+}
+#cv-inner .cv-info .subject .title-name h2 {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+#cv-inner .cv-info .info {
+  transition: 0.5s all;
+  position: relative;
+}
+#cv-inner .cv-info .info .btn {
+  display: none;
+}
+#cv-inner .cv-info .info .info-list .info-item {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 10px;
+}
+#cv-inner .cv-info .info .info-list .info-item i {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  background: #28699A;
+  color: #fff;
+  border-radius: 50%;
+}
+#cv-inner .cv-info .objective {
+  padding: 10px;
+}
+#cv-inner .cv-info .objective p {
+  color: #fff;
+  font-size: 13px;
+  text-align: left;
+}
+#cv-inner .cv-info .skills {
+  padding: 10px;
+  position: relative;
+}
+#cv-inner .cv-info .skills:hover {
+  border: 1px dashed #fff;
+}
+#cv-inner .cv-info .skills:hover .btn {
+  display: block;
+}
+#cv-inner .cv-info .skills .btn {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#cv-inner .cv-info .skills .skill-item {
+  margin-bottom: 10px;
+}
+#cv-inner .cv-info .skills .skill-item .skill-description {
+  color: #fff;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+#cv-inner .cv-info .skills .skill-item .skill-process {
+  width: 100%;
+  height: 10px;
+  background: #fff;
+  border-radius: 20px;
+  position: relative;
+}
+#cv-inner .cv-info .skills .skill-item .skill-process1:after {
+  position: absolute;
+  width: 80%;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 20px;
+  background: #28699A;
+}
+#cv-inner .cv-info .skills .skill-item .skill-process2:after {
+  position: absolute;
+  width: 60%;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 20px;
+  background: #28699A;
+}
+#cv-inner .cv-info .skills .skill-item .skill-process3:after {
+  position: absolute;
+  width: 80%;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 20px;
+  background: #28699A;
+}
+#cv-inner .cv-info .skills .skill-item .skill-process4:after {
+  position: absolute;
+  width: 70%;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 20px;
+  background: #28699A;
+}
+#cv-inner .cv-content {
+  background: #fff;
+}
+#cv-inner .cv-content .cv-title-content {
+  font-size: 20px;
+}
+#cv-inner .cv-content .cv-title-content i {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #28699A;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+}
+#cv-inner .cv-content .education .education-item {
+  position: relative;
+}
+#cv-inner .cv-content .education .education-item:hover {
+  border: 1px dashed #333;
+}
+#cv-inner .cv-content .education .education-item:hover .btn {
+  display: block;
+}
+#cv-inner .cv-content .education .education-item .btn {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  display: none;
+}
+#cv-inner .cv-content .work-experience .exp-item {
+  position: relative;
+}
+#cv-inner .cv-content .work-experience .exp-item:hover {
+  border: 1px dashed #333;
+}
+#cv-inner .cv-content .work-experience .exp-item:hover .btn {
+  display: block;
+}
+#cv-inner .cv-content .work-experience .exp-item .btn {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  display: none;
+}
+#cv-inner .cv-content .activity .activity-item {
+  position: relative;
+}
+#cv-inner .cv-content .activity .activity-item:hover {
+  border: 1px dashed #333;
+}
+#cv-inner .cv-content .activity .activity-item:hover .btn {
+  display: block;
+}
+#cv-inner .cv-content .activity .activity-item .btn {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  display: none;
+}
+
+#ModalInfo .form-group {
+  position: relative;
+}
+#ModalInfo .form-group .form-control {
+  padding-left: 45px;
+}
+#ModalInfo .form-group i {
+  position: absolute;
+  border-radius: 0.25rem;
+  left: 0;
+  top: 0;
+  font-size: 20px;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  line-height: 38px;
+  background: #37474f;
+  color: #fff;
+}
+
+#ModalSkills .form-group .slider-skill {
+  -webkit-appearance: none;
+  height: 15px;
+  background: #DFDFDF;
+  border-color: transparent;
+}
+#ModalSkills .form-group .slider-skill::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#ModalSkills .form-group .slider-skill:focus {
+  border: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+#boxTemp .card-cv {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  margin-top: 15px;
+  position: relative;
+  box-shadow: 0px 0px 20px #f5f5f5;
+}
+#boxTemp .card-cv:hover .overflow {
+  visibility: visible;
+}
+#boxTemp .overflow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#boxTemp .overflow .bt-themes {
+  display: inline-block;
+  margin-top: 10px;
+  background: #28699A;
+  padding: 15px 15px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+#boxTemp .overflow .bt-themes:hover {
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 5px 5px 10px rgba(245, 245, 245, 0.74);
+}
+
+/*# sourceMappingURL=template1.css.map */

@@ -1,0 +1,154 @@
+
+.toolbar-control{
+    background: #fff;
+    .toolbar{
+        text-align: center;
+        padding: 10px;
+        .toobar-title{
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+    .btn-action{
+        cursor: pointer;
+        padding: 10px 20px;
+        i{
+            font-size: 30px;
+        }
+    }
+    .toolbar-language-item{
+        .options{
+            .language{
+                position: relative;
+                cursor: pointer;
+                width: 30px;
+                height: 18px;
+                display: inline-block;
+                img{
+                    border: 1px solid #eee;
+                    border-radius: 2px;
+                }
+            }
+            .active{
+                &:after{
+                    right: 0;
+                    bottom:0;
+                    position: absolute;
+                    content: '';
+                    width: 15px;
+                    height: 15px;
+                    background-color:$green;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .toolbar-bg-color{
+        .options{
+            .color{
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                position: relative;
+                text-align: center;
+                cursor: pointer;
+                .fa-check{
+                
+                    position: absolute;
+                    left:50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    display: none;
+                }
+            }
+            .color-1{
+                background: $color1;
+            }
+            .color-2{
+                background: $color2;
+            }
+            .color-3{
+                background: $color3;
+            }
+            .color-4{
+                background: $color4;
+            }
+            .color-5{
+                background: $color5;
+            }
+            .active{
+                .fa-check{
+                    color: #fff;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .toolbar-font-family{
+        #font-options{
+            background: #fff;
+            width: 120px;
+            border-color: #efefef;
+        }
+    }
+    .toolbar-font-size{
+        .fontsize{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .small{
+            font-size: $font-small;
+        }
+        .normal{
+            font-size: $font-normal;
+        }
+        .large{
+            font-size: $font-large;
+        }
+        .active{
+            background: #666;
+            color: #fff;
+        }
+
+    }
+    .toolbar-line-height{
+        .line-height{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .small{
+            font-size: $font-small;
+        }
+        .normal{
+            font-size: $font-normal;
+        }
+        .large{
+            font-size: $font-large;
+        }
+        .active{
+            background: #666;
+            color: #fff;
+        }
+    }
+    .toolbar-save{
+        background-image: linear-gradient(to bottom right,$green,$color2);
+        color: #fff;
+        
+    }
+    .toolbar-download{
+        background-image: linear-gradient(to bottom right ,#FF0807,#db2827);
+        color: #fff;
+    }
+}

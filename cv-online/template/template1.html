@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fasttrack CV Mẫu Chuyên nghiệp 1</title>
+    <!-- Include Editor style. -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type='text/javascript'
+        src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.4/js/froala_editor.pkgd.min.js'></script>
+    <link href="css/template1.css" rel="stylesheet" type="text/css" />
+    <link href="../asset/fontawesome/css/all.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#"><img src="../images/fasttrack-logo.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-md-auto">
+                        <a class="btn btn-primary" href="#">Tạo CV Ngay</a>
+                        <a class="nav-item nav-link" href="#">CV Tham Khảo</a>
+                        <a class="nav-item nav-link text-success" href="#">Đăng Nhập</a>
+                        <a class="nav-item btn btn-outline-success" href="#">Đăng Ký</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="toolbar-control">
+            <div class="container d-flex mb-3">
+                <div class="toolbar toolbar-language-item">
+                    <div class="toobar-title">Ngôn ngữ</div>
+                    <div class="options">
+                        <span class="language active" onclick="changeLanguage(0)">
+                            <img src="../images/vi.png" class="img-fluid">
+                        </span>
+                        <span class="language" onclick="changeLanguage(1)">
+                            <img src="../images/en.png" class="img-fluid">
+                        </span>
+                        <span class="language" onclick="changeLanguage(2)">
+                            <img src="../images/jp.png" class="img-fluid">
+                        </span>
+                    </div>
+                </div>
+                <div class="toolbar toolbar-bg-color">
+                    <div class="toobar-title">Tông màu</div>
+                    <div class="options">
+                        <span class="color color-1 active" data-color="#37474f" onclick="changeColor(0)">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span class="color color-2" data-color="#029c7c" onclick="changeColor(1)">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span class="color color-3" data-color="#28699a" onclick="changeColor(2)">
+                            <i class="fas fa-check"></i></span>
+                        <span class="color color-4" data-color="#db2827" onclick="changeColor(3)">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span class="color color-5" data-color="#655643" onclick="changeColor(4)">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="toolbar toolbar-font-family">
+                    <div class="toobar-title">Font chữ</div>
+                    <select id="font-options" onchange="onchangeFont()">
+                        <option value="'Roboto', sans-serif">Roboto</option>
+                        <option value="'Open Sans', sans-serif">Open san</option>
+                        <option value="'Open Sans Condensed', sans-serif;">Open Sans Condensed</option>
+                        <option value="'Mitr', sans-serif">Mitr</option>
+                        <option value="'Montserrat', sans-serif">Montserrat</option>
+                    </select>
+                </div>
+                <div class="toolbar toolbar-font-size">
+                    <div class="toobar-title">Cỡ chữ</div>
+                    <span class="fontsize small" data-size="small" onclick="changeFontSize(this)"><i
+                            class="fas fa-font"></i></span>
+                    <span class="fontsize normal active" data-size="normal" onclick="changeFontSize(this)"><i
+                            class="fas fa-font"></i></span>
+                    <span class="fontsize large" data-size="large" onclick="changeFontSize(this)"><i
+                            class="fas fa-font"></i></span>
+                </div>
+                <div class="toolbar toolbar-line-height">
+                    <div class="toobar-title">Cách dòng</div>
+                    <span class="line-height small" data-spacing="small" onclick="changeSpacing(this)"><i
+                            class="fas fa-arrows-alt-v"></i></span>
+                    <span class="line-height normal active" data-spacing="normal" onclick="changeSpacing(this)"><i
+                            class="fas fa-arrows-alt-v"></i></span>
+                    <span class="line-height large" data-spacing="large" onclick="changeSpacing(this)"><i
+                            class="fas fa-arrows-alt-v"></i></span>
+                </div>
+                <div class="toolbar toolbar-change-template btn-action" onclick="changeTemplateCV(this)">
+                    <div class="toobar-title">Đổi mẫu CV</div>
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div class="toolbar toolbar-save btn-action">
+                    <div class="toobar-title">Lưu CV</div>
+                    <i class="far fa-save"></i>
+                </div>
+                <div class="toolbar toolbar-download btn-action" onclick="getPDF()">
+                    <div class="toobar-title">Download</div>
+                    <i class="far fa-file-pdf"></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" id="boxCV">
+                <div class="col-md-9">
+                    <div class="shadow" id="cv-inner">
+                        <div class="row">
+                            <div class="col-md-4 cv-info">
+                                <div class="subject">
+                                    <div class="avatar m-auto" data-toggle="modal" data-target="#ModelUploadImg">
+                                        <img src="images/avartar.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="title-name">
+                                        <h2 class="text-center cv-title-content" contenteditable="true"
+                                            tooltip="Họ và tên">HỌ VÀ TÊN</h2>
+                                        <p class="text-center text-light" contenteditable="true">Vị trí ứng tuyển</p>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <ul class="info-list list-group">
+                                        <li class="info-item list-group-item" contenteditable="true">
+                                            <i class="fas fa-birthday-cake"></i> 01/11/1996
+                                        </li>
+                                        <li class="info-item list-group-item" contenteditable="true">
+                                            <i class="fas fa-phone-alt"></i> 0344 22 6514
+                                        </li>
+                                        <li class="info-item list-group-item" contenteditable="true">
+                                            <i class="fas fa-envelope"></i> fasttrackedu@gmail.com
+                                        </li>
+                                        <li class="info-item list-group-item" contenteditable="true">
+                                            <i class="fas fa-map-marker-alt"></i> Làng Đại Học -TP Đà Nẵng
+                                        </li>
+                                        <li class="info-item list-group-item" contenteditable="true">
+                                            <i class="fab fa-facebook-f"></i> fb.com/fasttrackse
+                                        </li>
+                                        <li class="info-item list-group-item" contenteditable="true">
+                                            <i class="fab fa-github-alt"></i> fasttrack
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#ModalInfo">Edit</button>
+                                </div>
+                                <div class="objective">
+                                    <h2 class="heading-title cv-title-content" contenteditable="true">MỤC TIÊU</h2>
+                                    <p contenteditable="true">- Nêu một số mục tiêu ngắn hạn, dài hạn trong công việc mà
+                                        bạn đang hướng tới, vd:
+                                        Mong muốn được làm việc trong môi trường chuyên nghiệp, năng động và thử thách,
+                                        nâng cao kiến thức và kinh nghiệm chuyên môn.
+                                        Nỗ lực tối đa để hoàn thành tốt các nhiệm vụ được giao, góp phần xây dựng sự
+                                        nghiệp cá nhân, đóng góp cho sự phát triển của công ty.</p>
+                                </div>
+                                <div class="skills">
+                                    <h2 class="heading-title cv-title-content" contenteditable="true">KỸ NĂNG</h2>
+                                    <div class="skills-group">
+                                        <div class="skill-item">
+                                            <div class="skill-description">HTML/CSS</div>
+                                            <div class="skill-process skill-process1"></div>
+                                        </div>
+                                        <div class="skill-item">
+                                            <div class="skill-description">Bootstrap Framework</div>
+                                            <div class="skill-process skill-process2"></div>
+                                        </div>
+                                        <div class="skill-item">
+                                            <div class="skill-description">Js/ Angular</div>
+                                            <div class="skill-process skill-process3"></div>
+                                        </div>
+                                        <div class="skill-item">
+                                            <div class="skill-description">PHP/LARAVEL</div>
+                                            <div class="skill-process skill-process4"></div>
+                                        </div>
+                                        <div class="skill-item">
+                                            <div class="skill-description">JAVA/Spring Framework</div>
+                                            <div class="skill-process skill-process3"></div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#ModalSkills">Edit</button>
+                                </div>
+                                <div class="interests">
+                                    <h2 class="heading-title">INTERRECT</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-8 cv-content pt-3">
+                                <div class="education pb-3">
+                                    <h2 class="cv-title-content" contenteditable="true">
+                                        <i class="fas fa-graduation-cap"></i> HỌC VẤN
+                                    </h2>
+                                    <div class="education-group">
+                                        <div class="education-item">
+                                            <div class="education-title row">
+                                                <span class="title-content-item col-md-8 " contenteditable="true">TRUNG
+                                                    TÂM ĐÀO TẠO LẬP TRÌNH VIÊN CHUYÊN NGHIỆP FASTTRACK SE</span>
+                                                <span class="education-time col-md-4" contenteditable="true">OCT 2014 -
+                                                    MAY 2017</span>
+                                            </div>
+                                            <div class="education-desctiption" contenteditable="true">
+                                                - Với phương châm đi học như đi làm tôi không nhừng cố gắng học hỏi,
+                                                trao dồi kiến thức đặt ra những mục tiêu cho mình,
+                                                nghiêm túc với bản thân hơn, tại đây tôi được học tập làm việc dự án như
+                                                đi làm tại một công ty
+                                            </div>
+                                            <button class="btn btn-success btn-sm"><i class="fas fa-plus"></i>
+                                                thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="work-experience pb-3">
+                                    <h2 class="cv-title-content" contenteditable="true">
+                                        <i class="fas fa-briefcase"></i> KINH NGHIỆM LÀM VIỆC
+                                    </h2>
+                                    <div class="exp-group">
+                                        <div class="exp-item">
+                                            <div class="exp-title row">
+
+                                                <span class="title-content-item col-md-8" contenteditable="true">
+                                                    CÔNG TY CỔ PHẦN ĐÀO TẠO CÔNG NGHỆ HIỆU QUẢ - FASTTRACK SE</span>
+                                                <span class="exp-time col-md-4" contenteditable="true">OCT 2014 - MAY
+                                                    2017</span>
+                                            </div>
+                                            <div class="exp-desctiption" contenteditable="true">
+                                                - Project manager <br>
+                                                - Web DEVELOPER<br>
+                                                - Tham gia các dự án tại công ty , đóng góp một phần công sức của mình
+                                                vào sự phát triển của công ty
+                                            </div>
+                                            <button class="btn btn-success btn-sm"><i class="fas fa-plus"></i>
+                                                thêm</button>
+                                        </div>
+                                        <div class="exp-item">
+                                            <div class="exp-title row">
+                                                <span class="col-md-8 title-content-item" contenteditable="true">
+                                                    FREELANCER WEB DEVELOPER FULL STACK
+                                                </span>
+                                                <span class="exp-time col-md-4" contenteditable="true">OCT 2014 - MAY
+                                                    2017</span>
+                                            </div>
+                                            <div class="exp-desctiption" contenteditable="true">
+                                                As an enthusiastic, motivated person I look forward to working in a
+                                                dynamic environment, learning more experience and a stable job applying
+                                                the learned knowledge and project experience to contribute to the
+                                                company. , well develop company projects for the company to grow.
+                                            </div>
+                                            <button class="btn btn-success btn-sm"><i class="fas fa-plus"></i>
+                                                thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="activity pb-3">
+                                    <h2 class="cv-title-content" contenteditable="true">
+                                        <i class="fas fa-users"></i> HOẠT ĐỘNG
+                                    </h2>
+                                    <div class="activity-group">
+                                        <div class="activity-item">
+                                            <div class="activity-title row">
+                                                <span class="title-content-item col-md-8" contenteditable="true">NHÓM TỪ
+                                                    THIỆN FASTTRACK SE</span>
+                                                <span class="activity-time col-md-4" contenteditable="true">OCT 2014 -
+                                                    MAY 2017</span>
+                                            </div>
+                                            <div class="activity-desctiption" contenteditable="true">
+                                                - Tham gia vận động quyên góp, ủng hộ cho trẻ em nghèo các tỉnh miền núi
+                                                phía bắc.
+                                                Thực hiện các hành trình thiện nguyện mang sách vở và quần áo ấm lên
+                                                vùng cao,
+                                                tham gia các chương trình thu dọn môi trường, sơn sửa lại trường học,
+                                                công tác tình nguyện giúp đỡ xây nhà cho hộ nghèo...
+                                            </div>
+                                            <button class="btn btn-success btn-sm"><i class="fas fa-plus"></i>
+                                                thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="certifications pb-3">
+                                    <h2 class="cv-title-content" contenteditable="true">
+                                        <i class="fas fa-award"></i> GIẢI THƯỞNG
+                                    </h2>
+                                    <div class="certifications-group">
+                                        <div class="certifications-item">
+                                            <div class="certifications-title row">
+                                                <span class="title-content-item col-md-8" contenteditable="true">SINH
+                                                    VIÊN NGHIÊN CỨU KHOA HỌC CNTT</span>
+                                                <span class="certifications-time col-md-4" contenteditable="true">OCT
+                                                    2014 - MAY 2017</span>
+                                            </div>
+                                            <div class="certifications-desctiption" contenteditable="true">
+                                                - Tham gia các hoạt động sinh viên nghiên cứu khoa học tại trường , và
+                                                dành được giải khuyến khích hội sinh viên nghiên cứu khoa học
+                                            </div>
+                                            <!--<button class="btn btn-success btn-sm"><i class="fas fa-plus"></i> thêm</button>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+
+                    <h3>Thông tin cá nhân</h3>
+                    <p>Viết đầy đủ họ tên của bạn.</p>
+                    <ul>
+                        <li>Email cần nghiêm túc nên chứa họ tên bạn.</li>
+                        <li>Chèn ảnh đại diện: </li>
+                    </ul>
+                    <p>
+                        Nên: chèn ảnh phù hợp với vị trí ứng tuyển,nhìn thấy khuôn mặt trực diện.
+                        Không nên: ảnh chỉ nhìn thấy một phần khuôn mặt hoặc quay lưng về phía trước.
+                        Nếu bạn ứng tuyển cho một số công ty trong nước hoặc các công ty không phải là công ty nước
+                        ngoài liên quan đến các nước như Mỹ, Anh bạn cỏ thể thêm một số thông tin cá nhân khác: Ngày
+                        sinh, giới tính, tình trạng hôn nhân.
+                    </p>
+                    <hr>
+                    Mọi chi tiết vui lòng liên hệ:
+                    Email: hotro@topcv.vn
+                </div>
+            </div>
+            <div class="row" id="boxTemp">
+                <div class="col-md-12 text-right">
+                    <div class="btn btn-danger">
+                        Hủy
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-cv">
+                        <img src="../images/cv4.jpg" class="img-fluid">
+                        <div class="overflow">
+                            <a href="template1.html" class="bt-themes">Dùng mẫu này</a>
+                        </div>
+
+                    </div>
+                    <p>Mẫu CV Software Enginee</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-cv">
+                        <img src="../images/cv4.jpg" class="img-fluid">
+                        <div class="overflow">
+                            <a href="template2.html" class="bt-themes">Dùng mẫu này</a>
+                        </div>
+
+                    </div>
+                    <p>Mẫu CV Developemt Dark Theme</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-cv">
+                        <img src="../images/cv4.jpg" class="img-fluid">
+                        <div class="overflow">
+                            <a href="template3.html" class="bt-themes">Dùng mẫu này</a>
+                        </div>
+
+                    </div>
+                    <p>Mẫu CV Software Enginee</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="card-cv">
+                        <img src="../images/cv5.jpg" class="img-fluid">
+                        <div class="overflow">
+                            <a href="template4.html" class="bt-themes">Dùng mẫu này</a>
+                        </div>
+
+                    </div>
+                    <p>Mẫu CV Software Enginee</p>
+                </div>
+            </div>
+            <!--Model INFO CV-->
+            <!-- Modal -->
+            <div class="modal fade" id="ModalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="exampleModalCenterTitle">Chỉnh sửa thông tin liên hệ
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <input type="text" placeholder="Sinh nhật" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <input type="text" placeholder="Di động" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <i class="fas fa-envelope-open"></i>
+                                    <input type="text" placeholder="Email liên hệ" class="form-control"
+                                        id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <input type="text" placeholder="Facebook ID" class="form-control"
+                                        id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <i class="fab fa-github"></i>
+                                    <input type="text" placeholder="Github ID" class="form-control" id="recipient-name">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                    class="fas fa-times"></i> Hủy</button>
+                            <button type="button" class="btn btn-success"><i class="far fa-save"></i> Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Model skill edit-->
+            <div class="modal fade" id="ModalSkills" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="exampleModalCenterTitle">Skills
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>HTML/CSS</label>
+                                    <input type="range" min="1" max="100" class="form-control slider-skill">
+                                    <label>Bootstrap framework</label>
+                                    <input type="range" min="1" max="100" class="form-control slider-skill">
+                                    <label>Javascript /Angular JS</label>
+                                    <input type="range" min="1" max="100" class="form-control slider-skill">
+                                    <label>PHP/Laravel framework</label>
+                                    <input type="range" min="1" max="100" class="form-control slider-skill">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                    class="fas fa-times"></i> Hủy</button>
+                            <button type="button" class="btn btn-success"><i class="far fa-save"></i> Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Model upload image avatar-->
+            <div class="modal fade" id="ModelUploadImg" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="exampleModalCenterTitle">Cập nhật ảnh đại diện
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                    class="fas fa-times"></i> Hủy</button>
+                            <button type="button" class="btn btn-success"><i class="far fa-save"></i> Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
+        <script src="js/toolbar.js"></script>
+
+</body>
+
+</html>

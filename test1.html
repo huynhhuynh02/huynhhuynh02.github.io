@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1 - </title>
+    <style>
+        nav{
+            background: blue;
+        }
+        nav ul{
+            list-style: none;
+        }
+        @keyframes fade{
+            0%{
+                top:100px;
+                opacity: 0;
+            }
+            100%{
+                top: 50px;
+            }
+        }
+        nav ul li{
+            position: relative;
+            display: inline-block;
+        }
+        nav ul li a{
+            font-size:20px;
+            line-height: 1;
+            transition: all 1s linear;
+            color: #fff;
+            display: inline-block;
+            text-decoration: none;
+            padding: 15px 20px;
+        }
+        nav ul li a:hover{
+            background: #fff;
+            color: #000;
+        }
+        nav ul li ul{
+            animation: fade 0.3s linear 1;
+            padding: 0;
+            margin: 0;
+            width:200px;
+            position: absolute;
+            left: 0;
+            top:50px;
+            display: none;
+            background:blue;
+        }
+        nav ul li:hover ul{
+            display: block;
+        }
+        nav ul li ul li{
+            display: block;
+        }
+        nav ul li ul li a{
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Service</a>
+                <ul>
+                    <li><a href="">Service 1</a></li>
+                    <li><a href="">Service 2</a></li>
+                    <li><a href="">Service 3</a></li>
+                    <li><a href="">Service 4</a></li>
+                </ul>
+            </li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

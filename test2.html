@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .box{
+            transition: all 0.3s linear;
+            overflow: hidden;
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-image: url(case-slide5.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .box:hover .overlay{
+            top: 0;
+            
+        }
+        .box:hover{
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+        }
+        .overlay{
+            transition: all 0.3s linear;
+            padding: 30px;
+            left: 0;
+            top:75%;
+            position: absolute;
+            width:100%;
+            height: 100%;
+            background-color:rgba(0,0,0,0.5);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="overlay">
+            <h2>Test title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aliquam itaque impedit error provident,
+                expedita, distinctio quia ipsa cupiditate sunt voluptas. Illum ea culpa obcaecati. Aperiam error
+                accusamus quam natus.</p>
+        </div>
+    </div>
+</body>
+
+</html>

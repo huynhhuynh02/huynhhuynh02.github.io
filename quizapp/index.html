@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qizz App</title>
+    <link rel="stylesheet" href="App.css">
+</head>
+<body>
+    <div class="container">
+        <h3 id="question"></h3>
+        <button class="answer" onclick="chooseAnswer(this,'A')" id="answerA"></button>
+        <button class="answer" onclick="chooseAnswer(this,'B')" id="answerB"></button>
+        <button class="answer" onclick="chooseAnswer(this,'C')" id="answerC"></button>
+        <button class="answer" onclick="chooseAnswer(this,'D')" id="answerD"></button>
+        <div class="more">
+            <button class="btn-next" id="next">
+                Next
+            </button>
+        </div>
+        
+    </div>
+    <script src="App.js"></script>
+</body>
+</html>

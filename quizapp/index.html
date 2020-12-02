@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qizz App</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="App.css">
 </head>
+
 <body>
     <div class="container">
         <h3 id="question"></h3>
@@ -18,8 +21,19 @@
                 Next
             </button>
         </div>
-        
+        <div class="timer">
+            <span id="minutes"></span><span>:</span><span id="seconds"></span>
+        </div>
+    </div>
+    <div id="timeout" class="timeout">
+        <div class="content">
+            <h2>Bạn đã hết thời gian làm bài </h2>
+            <div id="reset" class="btn-reset">
+                <i class="fas fa-undo"></i> Làm lại
+            </div>
+        </div>
     </div>
     <script src="App.js"></script>
 </body>
+
 </html>

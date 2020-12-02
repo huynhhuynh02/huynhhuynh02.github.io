@@ -83,7 +83,10 @@ const question = [
 ]
 var currentQuestion = 0;
 var score = 0;
+var minutes = 1;
+var seconds = 60;
 var answers = document.getElementsByClassName('answer');
+
 function displayQuestion(current){
     document.getElementById('question').innerText = question[current].question;
     document.getElementById('answerA').innerText = question[current].answerA;
@@ -126,6 +129,26 @@ function showScore(){
         document.getElementsByClassName('container')[0].innerHTML = "<img src='images/love.png' width='300px'><br><h1>Score:"+score+"</h1>"
     }
 }
-
+var timer = setInterval(function(){
+    seconds--;
+    if(seconds<0){
+        minutes--;
+        seconds = 59;
+        if(minutes<0){
+            clearInterval(timer);
+            minutes = 0;
+            seconds = 0;
+            document.getElementsByTagName("body")[0].classList.add('active');
+            document.getElementById('timeout').style.display = "flex";
+        }else{
+            
+        }
+    }
+    document.getElementById('minutes').innerHTML= minutes;
+    document.getElementById('seconds').innerHTML= seconds;
+},1000);
 displayQuestion(currentQuestion);
 document.getElementById('next').addEventListener("click",nextQuestion);
+document.getElementById('reset').addEventListener('click',function(){
+    window.location.href = '';
+});

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Quản lý sinh viên</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            QUẢN LÝ SINH VIÊN
+        </div>
+        <!-- <ul>
+            <li>
+                <a href="">Thêm sinh viên</a>
+            </li>
+            <li>
+                <a href="">Danh sách sinh viên</a>
+            </li>
+            <li>
+                <a href="">Top Sinh Viên</a>
+            </li>
+        </ul> -->
+    </nav>
+    <div class="add-student">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <div class="form">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="maSv">Mã sinh viên</label>
+                                <input id="maSv" class="form-control" type="text" placeholder="Mã sinh viên">
+                                <label class="invalid" id="error-id"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="fullName">Tên sinh viên</label>
+                                <input id="fullName" class="form-control" type="text" placeholder="Họ tên">
+                                <label class="invalid" id="error-name"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input id="email" class="form-control" type="email" placeholder="Email">
+                                <label class="invalid" id="error-email"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Điện thoại</label>
+                                <input id="phone" class="form-control" type="number" placeholder="Điện thoại">
+                                <label class="invalid" id="error-phone"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="diemToan">Điểm Toán</label>
+                                <input id="diemToan" class="form-control" type="text" placeholder="Điểm toán">
+                                <label class="invalid" id="error-maths"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="diemLy">Điểm Lý</label>
+                                <input id="diemLy" class="form-control" type="text" placeholder="Điểm lý">
+                                <label class="invalid" id="error-physical"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="diemHoa">Điểm Hóa</label>
+                                <input id="diemHoa" class="form-control" type="text" placeholder="Điểm hóa">
+                                <label class="invalid" id="error-chemical"></label>
+                            </div>
+                            <div class="form-group">
+                                <button id="btnAdd" type="submit" class="btn btn-primary" ><i class="fas fa-plus"></i> Thêm sinh viên</button>
+                                <button id="btnReset" type="reset" class="btn btn-info" ><i class="fas fa-undo"></i> Nhập lại</button>
+                                <div id="updateButton">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <table>
+                        <thead>
+                            <th>Mã SV</th>
+                            <th>Họ tên</th>
+                            <th>Điểm toán</th>
+                            <th>Điểm lý</th>
+                            <th>Điểm hóa</th>
+                            <th>Điểm TB</th>
+                            <th></th>
+                        </thead>
+                        <tbody id="listData">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-student">
+
+    </div>
+    <div class="top-student">
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.gradient{
+    border: none !important;
+    border-radius:0.5rem;
+    background-image: linear-gradient(#00B0F3,#186DDC);
+}
+.form-content{
+    background-color: #EBF9FC;
+    border: 3px solid #69AAE8;
+    padding: 30px;
+    border-radius:.5rem;
+}
+.footer{
+    background-color: #0B5CD1;
+}
+.box-info {
+    font-size:20px;
+    color:#0B5CD1;
+}
+.fixed-top{
+    background-color: #fff;
+}

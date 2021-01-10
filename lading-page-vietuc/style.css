@@ -1,3 +1,7 @@
+[aria-expanded="false"] .fa-chevron-up, 
+[aria-expanded="true"] .fa-chevron-down{
+    display:none;
+}
 .gradient{
     border: none !important;
     border-radius:0.5rem;

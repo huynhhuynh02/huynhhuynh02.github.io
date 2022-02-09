@@ -1,9 +1,9 @@
 console.log('we are in')
 
 let theme = localStorage.getItem('theme')
-if(theme == null){
+if (theme == null){
 	setTheme('light')
-}else{
+} else{
 	setTheme(theme)
 }
 
